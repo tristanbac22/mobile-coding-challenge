@@ -34,6 +34,7 @@ You will be building a simple two-screen podcasts app. A basic mockup is provide
 	 - [ ] No API key required, you can simply use the mock server to fetch test data. [More information here](https://www.listennotes.help/article/48-how-to-test-the-podcast-api-without-an-api-key "More information here").
 - [ ] Focus on implementing the app in portrait orientation only.
 - [ ] The list should support pagination, loading 10 items at a time.
+- [ ] Favourite state should be persistent.
 
 ## The Evaluation
 
