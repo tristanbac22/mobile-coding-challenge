@@ -43,6 +43,7 @@ Your code will be evaluated based on the following criteria:
 - [ ] The code should compile.
 - [ ] No crashes, bugs, or compiler warnings.
 - [ ] App operates as outlined above.
+- [ ] Frequent commits (not just 1 large commit).
 - [ ] Conforms to modern development principles.
 - [ ] Code is easy to understand. Bonus points for documentation.
 - [ ] Commit history is consistent, easy to follow and understand.
