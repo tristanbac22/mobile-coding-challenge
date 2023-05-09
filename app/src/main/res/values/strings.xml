@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">PodcastSelection</string>
+    <string name="podcast_title">Podcast Title</string>
+    <string name="podcast_creator">Author</string>
+    <string name="podcast_favorite">Favourited</string>
+    <string name="podcast_description">A Test String for the podcast description</string>
+    <string name="back_btn">Back</string>
 </resources>
