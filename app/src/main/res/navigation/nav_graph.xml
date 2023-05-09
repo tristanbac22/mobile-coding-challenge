@@ -9,5 +9,18 @@
         android:id="@+id/podcastListFragment"
         android:name="com.example.podcastselection.view.PodcastListFragment"
         android:label="PodcastListFragment"
-        tools:layout="@layout/fragment_podcast_list"/>
+        tools:layout="@layout/fragment_podcast_list">
+        <action
+            android:id="@+id/show_podcast_detail"
+            app:destination="@id/podcastDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/podcastDetailFragment"
+        android:name="com.example.podcastselection.view.PodcastDetailFragment"
+        android:label="PodcastDetailFragment"
+        tools:layout="@layout/fragment_podcast_detail">
+        <action
+            android:id="@+id/return_to_list"
+            app:destination="@+id/podcastListFragment"/>
+    </fragment>
 </navigation>
