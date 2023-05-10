@@ -1,8 +1,11 @@
 package com.example.podcastselection.view
 
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.navArgs
 import com.example.podcastselection.databinding.FragmentPodcastDetailBinding
 import com.example.podcastselection.model.api.Podcast
 
@@ -16,26 +19,33 @@ class PodcastDetailFragment: Fragment() {
         get() = checkNotNull(_binding){
             "Cannot access Binding because it is null. Is the view visible?"
         }
-    private lateinit var podcast: Podcast
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        podcast = Podcast(
-            id = "jakgnbkjasengi3",
-            title = "Avenue",
-            author = "John Doe",
-            fullImage = "url_fullsize",
-            thumbnail ="urk_thumbnail"
-        )
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        _binding = FragmentPodcastDetailBinding.inflate(inflater,container, false)
+        return binding.root
     }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         binding.apply {
+            btnFavourite.setOnClickListener {
+
+            }
+
 
         }
     }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
+
+
 
 
 }

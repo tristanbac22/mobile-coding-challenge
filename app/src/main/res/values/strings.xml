@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">PodcastSelection</string>
+    <string name="app_name">Podcasts</string>
     <string name="podcast_title">Podcast Title</string>
     <string name="podcast_creator">Author</string>
     <string name="podcast_favorite">Favourite</string>

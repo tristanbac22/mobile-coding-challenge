@@ -4,46 +4,60 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <ImageView
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/iv_podcast_icon"
+        app:cardCornerRadius="8dp"
+        android:layout_margin="8dp"
+        android:elevation="8dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:srcCompat ="@drawable/downloading_image"/>
+        app:layout_constraintBottom_toBottomOf="parent">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/iv_podcast_icon"
+
+            app:srcCompat ="@drawable/downloading_image"/>
+    </androidx.cardview.widget.CardView>
+
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/tv_podcast_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:gravity="start"
         android:text="@string/podcast_title"
-        android:gravity="start"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/iv_podcast_icon"
         app:layout_constraintBottom_toTopOf="@+id/tv_podcast_creator"
-        />
+        app:layout_constraintStart_toEndOf="@+id/cv_icon"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/tv_podcast_creator"
-        android:text="@string/podcast_creator"
-        android:gravity="start"
-        app:layout_constraintTop_toBottomOf="@+id/tv_podcast_title"
-        app:layout_constraintStart_toEndOf="@+id/iv_podcast_icon"
-        app:layout_constraintBottom_toTopOf="@id/tv_podcast_favourite"
-        />
-
-    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/tv_podcast_favourite"
-        android:text="@string/podcast_favorite"
+        android:layout_marginStart="16dp"
         android:gravity="start"
-        app:layout_constraintTop_toBottomOf="@+id/tv_podcast_creator"
-        app:layout_constraintStart_toEndOf="@+id/iv_podcast_icon"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        android:text="@string/podcast_creator"
+        android:textColor="@color/gray"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toTopOf="@id/tv_podcast_favourite"
+        app:layout_constraintStart_toEndOf="@+id/cv_icon"
+        app:layout_constraintTop_toBottomOf="@+id/tv_podcast_title" />
+
+    <TextView
+        android:id="@+id/tv_podcast_favourite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:gravity="start"
+        android:text="@string/podcast_favorite"
+        android:textColor="@color/orange"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/cv_icon"
+        app:layout_constraintTop_toBottomOf="@+id/tv_podcast_creator" />
 
 
 

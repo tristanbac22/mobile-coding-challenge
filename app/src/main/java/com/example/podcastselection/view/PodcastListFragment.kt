@@ -1,24 +1,19 @@
 package com.example.podcastselection.view
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.podcastselection.databinding.FragmentPodcastListBinding
-import com.example.podcastselection.model.api.ListenApi
 import com.example.podcastselection.viewmodel.PodcastListViewModel
 import kotlinx.coroutines.launch
-import retrofit2.Retrofit
-import retrofit2.converter.moshi.MoshiConverterFactory
-import retrofit2.create
 
 /* Fragment Class that is responsible for displaying the list of podcasts
 * The Fragment consists of a title for the application with a Recyclerview implement the list
@@ -53,7 +48,13 @@ class PodcastListFragment: Fragment() {
         viewLifecycleOwner.lifecycleScope.launch{
             //check for update everytime fragment goes from created to started
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED){
-
+                podcastListViewModel.podcastListItems.collect(){items ->
+                    binding.rvPodcast.adapter = PodcastListAdapter(items){ podcast ->
+                        findNavController().navigate(
+                            PodcastListFragmentDirections.showPodcastDetail(podcast)
+                        )
+                    }
+                }
             }
         }
     }
